@@ -1,0 +1,21 @@
+aws_region       = "ap-south-1"
+project_name     = "k8s-gitops-platform"
+environment      = "dev"
+cluster_name     = "k8s-gitops-platform-eks"
+cluster_version  = "1.33"
+
+vpc_cidr             = "10.20.0.0/16"
+public_subnet_cidrs  = ["10.20.1.0/24", "10.20.2.0/24"]
+private_subnet_cidrs = ["10.20.11.0/24", "10.20.12.0/24"]
+
+node_instance_types = ["t3.medium"]
+node_min_size       = 2
+node_desired_size   = 2
+node_max_size       = 4
+
+ssh_public_key_path = "~/.ssh/k8s-capstone-key.pub"
+
+# Replace this with your public IP in CIDR format.
+# Example:
+# allowed_ssh_cidr = "103.10.20.30/32"
+allowed_ssh_cidr = "YOUR_PUBLIC_IP/32"
